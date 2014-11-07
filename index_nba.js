@@ -66,6 +66,11 @@ function getRoster(teamID, callback) {
     createRequest(url, callback);
 }
 
+function getSeasonalStats(teamID, callback) {
+    var url = urlHelper.getSeasonalStatsUrl(teamID);
+    createRequest(url, callback);
+}
+
 function createRequest(url, callback) {
     request(url, function (error, response, body) {
 
@@ -121,5 +126,8 @@ module.exports = {
 
     getRoster: function(teamID, callback) {
         return getRoster(teamID, callback);
+    },
+    getSeasonalStats: function(teamID, callback) {
+        return getSeasonalStats(teamID, callback);
     }
 };
