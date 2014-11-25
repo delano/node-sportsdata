@@ -119,6 +119,18 @@ function createRosterUrl(teamID) {
 
 function createSeasonalStatsUrl(teamID) {
   // URL should look like: http://api.sportsdatallc.org/nba-[access_level][version]/seasontd/[season]/[nba_season]/teams/[teamID]/statistics.xml?api_key=[your_api_key]
+  url = 'http://api.sportsdatallc.org/nba-'
+    + config.nba.access_level
+    + config.nba.version
+    + '/seasontd/'
+    + config.nba.seasonID
+    + config.nba.season
+    + '/teams/'
+    + teamID
+    + '/statistics.xml?api_key='
+    + config.nba.apikey;
+  console.log(url);
+
   return 'http://api.sportsdatallc.org/nba-'
     + config.nba.access_level
     + config.nba.version
@@ -164,7 +176,7 @@ module.exports = {
   getRosterUrl: function (teamID) {
     return createRosterUrl(teamID);
   },
-  
+
   getSeasonalStatsUrl: function(teamID){
     return createSeasonalStatsUrl(teamID);
   }
