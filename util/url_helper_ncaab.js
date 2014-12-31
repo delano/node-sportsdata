@@ -108,6 +108,15 @@ function createSeasonalStatsUrl(teamID) {
     + config.ncaab.apikey;
 }
 
+function createLeagueHierarchyUrl() {
+    // URL should look like: http://api.sportsdatallc.org/ncaab-[access_level][version]/league/hierarchy.xml?api_key=[your_api_key]
+  return 'http://api.sportsdatallc.org/ncaab-'
+    + config.ncaab.access_level
+    + config.ncaab.version
+    + '/league/hierarchy.xml?api_key='
+    + config.ncaab.apikey;
+}
+
 module.exports = {
 
   getSeasonScheduleUrl: function () {
@@ -136,5 +145,9 @@ module.exports = {
 
   getSeasonalStatsUrl: function(teamID){
     return createSeasonalStatsUrl(teamID);
+  }
+
+  getLeagueHierarchyUrl: function(){
+    return createLeagueHierarchyUrl();
   }
 }

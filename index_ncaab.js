@@ -61,6 +61,11 @@ function getSeasonalStats(teamID, callback) {
     createRequest(url, callback);
 }
 
+function getLeagueHierarchy(division, callback) {
+    var url = urlHelper.getLeagueHierarchyUrl();
+    createRequest(url, callback);
+}
+
 function createRequest(url, callback) {
     request(url, function (error, response, body) {
 
