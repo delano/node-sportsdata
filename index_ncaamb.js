@@ -28,49 +28,41 @@ function init(access_level, version, apikey, year, season) {
 
 function getSeasonSchedule(callback) {
     var url = urlHelper.getSeasonScheduleUrl();
-    console.log(url);
     createRequest(url, callback);
 }
 
 function getDailySchedule(year, month, day, callback) {
     var url = urlHelper.getDailyScheduleUrl(year, month, day);
-    console.log(url);
     createRequest(url, callback);
 }
 
 function getBoxScore(gameID, callback) {
   var url = urlHelper.getBoxScoreUrl(gameID);
-  console.log(url);
   createRequest(url, callback);
 }
 
 function getGameScoreAndStats(gameID, callback) {
   var url = urlHelper.getGameSummaryUrl(gameID);
-  console.log(url);
   createRequest(url, callback);
 }
 
 function getTournamentList(callback) {
     var url = urlHelper.getTournamentListUrl();
-    console.log(url);
     createRequest(url, callback);
 }
 
 function getTournamentSchedule(tournament_id, callback) {
     var url = urlHelper.getTournamentScheduleUrl(tournament_id);
-    console.log(url);
     createRequest(url, callback);
 }
 
 function getSeasonalStats(teamID, callback) {
     var url = urlHelper.getSeasonalStatsUrl(teamID);
-    console.log(url);
     createRequest(url, callback);
 }
 
 function getLeagueHierarchy(callback) {
     var url = urlHelper.getLeagueHierarchyUrl();
-    console.log(url);
     createRequest(url, callback);
 }
 
