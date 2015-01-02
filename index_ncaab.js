@@ -18,7 +18,7 @@ var config = require('./config'),
     parser = new xml2js.Parser(),
     urlHelper = require('./util/url_helper_ncaab');
 
-function init(access_level, version, year, season, apikey) {
+function init(access_level, version, apikey, year, season) {
     config.ncaab.access_level = access_level;
     config.ncaab.version = version;
     config.ncaab.year = year;
@@ -28,36 +28,43 @@ function init(access_level, version, year, season, apikey) {
 
 function getSeasonSchedule(callback) {
     var url = urlHelper.getSeasonScheduleUrl();
+    console.log(url);
     createRequest(url, callback);
 }
 
 function getDailySchedule(year, month, day, callback) {
     var url = urlHelper.getDailyScheduleUrl(year, month, day);
+    console.log(url);
     createRequest(url, callback);
 }
 
 function getBoxScore(gameID, callback) {
   var url = urlHelper.getBoxScoreUrl(gameID);
+  console.log(url);
   createRequest(url, callback);
 }
 
 function getGameScoreAndStats(gameID, callback) {
   var url = urlHelper.getGameSummaryUrl(gameID);
+  console.log(url);
   createRequest(url, callback);
 }
 
 function getTournamentList(callback) {
     var url = urlHelper.getTournamentListUrl();
+    console.log(url);
     createRequest(url, callback);
 }
 
 function getTournamentSchedule(tournament_id, callback) {
     var url = urlHelper.getTournamentScheduleUrl(tournament_id);
+    console.log(url);
     createRequest(url, callback);
 }
 
 function getSeasonalStats(teamID, callback) {
     var url = urlHelper.getSeasonalStatsUrl(teamID);
+    console.log(url);
     createRequest(url, callback);
 }
 
