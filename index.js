@@ -17,7 +17,7 @@ var sportsdata_nfl = require('./index_nfl'),
     sportsdata_mlb = require('./index_mlb'),
     sportsdata_ncaaf = require('./index_ncaaf'),
     sportsdata_nhl = require('./index_nhl'),
-    sportsdata_ncaab = require('./index_ncaab');
+    sportsdata_ncaamb = require('./index_ncaamb');
 
 function createNfl() {
     return sportsdata_nfl;
@@ -39,8 +39,8 @@ function createNhl() {
     return sportsdata_nhl;
 }
 
-function createNcaab() {
-  return sportsdata_ncaab;
+function createNcaamb() {
+  return sportsdata_ncaamb;
 }
 
 module.exports.NFL = createNfl();
@@ -48,4 +48,4 @@ module.exports.NBA = createNba();
 module.exports.MLB = createMlb();
 module.exports.NCAAF = createNcaaf();
 module.exports.NHL = createNhl();
-module.exports.NCAAB = createNcaab();
+module.exports.NCAAMB = createNcaamb();

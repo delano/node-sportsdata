@@ -35,11 +35,11 @@ config.nhl.apikey = '';
 config.nhl.seasonID = '2014';
 config.nhl.season = 'REG';
 
-config.ncaab = {};
-config.ncaab.access_level = 't';
-config.ncaab.version = '3';
-config.ncaab.season = 'REG';
-config.ncaab.apikey = '';
-config.ncaab.year = '2014';
+config.ncaamb = {};
+config.ncaamb.access_level = 't';
+config.ncaamb.version = '3';
+config.ncaamb.season = 'REG';
+config.ncaamb.apikey = '';
+config.ncaamb.year = '2014';
 
 module.exports = config;

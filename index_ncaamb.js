@@ -16,14 +16,14 @@ var config = require('./config'),
     request = require('request'),
     xml2js = require('xml2js'),
     parser = new xml2js.Parser(),
-    urlHelper = require('./util/url_helper_ncaab');
+    urlHelper = require('./util/url_helper_ncaamb');
 
 function init(access_level, version, apikey, year, season) {
-    config.ncaab.access_level = access_level;
-    config.ncaab.version = version;
-    config.ncaab.year = year;
-    config.ncaab.season = season;
-    config.ncaab.apikey = apikey;
+    config.ncaamb.access_level = access_level;
+    config.ncaamb.version = version;
+    config.ncaamb.year = year;
+    config.ncaamb.season = season;
+    config.ncaamb.apikey = apikey;
 }
 
 function getSeasonSchedule(callback) {
