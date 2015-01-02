@@ -119,7 +119,7 @@ module.exports = {
         return getSeasonalStats(teamID, callback);
     },
 
-    getLeagueHierarchy: function() {
+    getLeagueHierarchy: function(callback) {
         return getLeagueHierarchy(callback);
     }
 };
