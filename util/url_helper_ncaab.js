@@ -145,7 +145,7 @@ module.exports = {
 
   getSeasonalStatsUrl: function(teamID){
     return createSeasonalStatsUrl(teamID);
-  }
+  },
 
   getLeagueHierarchyUrl: function(){
     return createLeagueHierarchyUrl();

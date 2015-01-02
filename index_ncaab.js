@@ -61,7 +61,7 @@ function getSeasonalStats(teamID, callback) {
     createRequest(url, callback);
 }
 
-function getLeagueHierarchy(division, callback) {
+function getLeagueHierarchy(callback) {
     var url = urlHelper.getLeagueHierarchyUrl();
     createRequest(url, callback);
 }
@@ -117,5 +117,9 @@ module.exports = {
 
     getSeasonalStats: function(teamID, callback) {
         return getSeasonalStats(teamID, callback);
+    },
+
+    getLeagueHierarchy: function() {
+        return getLeagueHierarchy(callback);
     }
 };
