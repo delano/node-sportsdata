@@ -89,7 +89,7 @@ function createTournamentScheduleUrl(tournament_id) {
     + config.ncaamb.version
     + '/tournaments/'
     + tournament_id
-    + '/summary.xml?api_key='
+    + '/schedule.xml?api_key='
     + config.ncaamb.apikey;
 }
 
@@ -140,7 +140,7 @@ module.exports = {
   },
 
   getTournamentScheduleUrl: function (tournament_id) {
-    return createTournamentListUrl(tournament_id);
+    return createTournamentScheduleUrl(tournament_id);
   },
 
   getSeasonalStatsUrl: function(teamID){
