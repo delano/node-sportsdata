@@ -6,7 +6,7 @@ function createUrlWithEndpoint(endpoint) {
     + config.ncaamb.access_level
     + config.ncaamb.version
     + '/games/'
-    + config.ncaamb.seasonID
+    + config.ncaamb.year
     + '/'
     + config.ncaamb.season
     + '/'
@@ -74,7 +74,7 @@ return 'http://api.sportsdatallc.org/ncaamb-'
     + config.ncaamb.access_level
     + config.ncaamb.version
     + '/tournaments/'
-    + config.ncaamb.seasonID
+    + config.ncaamb.year
     + '/'
     + config.ncaamb.season
     + '/schedule.xml?api_key='
@@ -99,7 +99,7 @@ function createSeasonalStatsUrl(teamID) {
     + config.ncaamb.access_level
     + config.ncaamb.version
     + '/seasontd/'
-    + config.ncaamb.seasonID
+    + config.ncaamb.year
     + '/'
     + config.ncaamb.season
     + '/teams/'
