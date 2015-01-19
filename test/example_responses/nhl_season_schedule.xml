@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" charset="UTF-8" href="/xslt/hockey/schedule-v2.0.xsl"?>
+<!-- Generation started @ 2015-01-19 23:08:17 +0000 -->
+<league xmlns="http://feed.elasticstats.com/schema/hockey/schedule-v2.0.xsd" id="fd560107-a85b-4388-ab0d-655ad022aff7" name="NHL" alias="NHL">
+  <season-schedule id="0670af84-09f7-4149-8d28-7f15396a61f1" year="2014" type="REG">
+    <games>
+      <game id="9d4a39be-38e1-4720-82a3-e6182f790879" status="closed" coverage="full" home_team="441730a9-0f24-11e2-8525-18a905767e44" away_team="441713b7-0f24-11e2-8525-18a905767e44" scheduled="2014-10-08T23:00:00+00:00">
+        <venue id="a84c7004-18b2-4c5d-a036-f0c368c08bc5" name="Air Canada Centre" capacity="18819" address="40 Bay St." city="Toronto" state="ON" zip="M5J 2X2" country="CANADA"/>
+        <home name="Toronto Maple Leafs" alias="TOR" id="441730a9-0f24-11e2-8525-18a905767e44">
+        </home>
+        <away name="Montreal Canadiens" alias="MTL" id="441713b7-0f24-11e2-8525-18a905767e44">
+        </away>
+        <broadcast network="SNET"/>
+      </game>
+      <game id="c702af62-6f2c-4c88-816f-b85fb67374fc" status="closed" coverage="full" home_team="4416ba1a-0f24-11e2-8525-18a905767e44" away_team="44179d47-0f24-11e2-8525-18a905767e44" scheduled="2014-10-08T23:30:00+00:00">
+        <venue id="854ca968-b25f-44f9-abc5-52bcf8825f15" name="TD Garden" capacity="17565" address="100 Legends Way" city="Boston" state="MA" zip="02114" country="USA"/>
+        <home name="Boston Bruins" alias="BOS" id="4416ba1a-0f24-11e2-8525-18a905767e44">
+        </home>
+        <away name="Philadelphia Flyers" alias="PHI" id="44179d47-0f24-11e2-8525-18a905767e44">
+        </away>
+        <broadcast network="NBCSN" satellite="220"/>
+      </game>
+    </games>
+  </season-schedule>
+</league>
+<!-- Generation ended @ 2015-01-19 23:08:19 +0000 -->
