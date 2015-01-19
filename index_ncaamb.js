@@ -16,14 +16,14 @@ var config = require('./config'),
     request = require('request'),
     xml2js = require('xml2js'),
     parser = new xml2js.Parser(),
-    urlHelper = require('./util/url_helper_nba');
+    urlHelper = require('./util/url_helper_ncaamb');
 
-function init(access_level, version, apikey, seasonID, season) {
-    config.nba.access_level = access_level;
-    config.nba.version = version;
-    config.nba.apikey = apikey;
-    config.nba.seasonID = seasonID;
-    config.nba.season = season;
+function init(access_level, version, apikey, year, season) {
+    config.ncaamb.access_level = access_level;
+    config.ncaamb.version = version;
+    config.ncaamb.year = year;
+    config.ncaamb.season = season;
+    config.ncaamb.apikey = apikey;
 }
 
 function getSeasonSchedule(callback) {
@@ -46,28 +46,23 @@ function getGameScoreAndStats(gameID, callback) {
   createRequest(url, callback);
 }
 
-function getStandings(callback) {
-    var url = urlHelper.getStandingsUrl();
+function getTournamentList(callback) {
+    var url = urlHelper.getTournamentListUrl();
     createRequest(url, callback);
 }
 
-function getRankings(callback) {
-    var url = urlHelper.getRankingsUrl();
-    createRequest(url, callback);
-}
-
-function getInjuries(callback) {
-    var url = urlHelper.getInjuriesUrl();
-    createRequest(url, callback);
-}
-
-function getRoster(teamID, callback) {
-    var url = urlHelper.getRosterUrl(teamID);
+function getTournamentSchedule(tournament_id, callback) {
+    var url = urlHelper.getTournamentScheduleUrl(tournament_id);
     createRequest(url, callback);
 }
 
 function getSeasonalStats(teamID, callback) {
     var url = urlHelper.getSeasonalStatsUrl(teamID);
+    createRequest(url, callback);
+}
+
+function getLeagueHierarchy(callback) {
+    var url = urlHelper.getLeagueHierarchyUrl();
     createRequest(url, callback);
 }
 
@@ -88,8 +83,8 @@ function createRequest(url, callback) {
 
 module.exports = {
 
-    init: function(access_level, version, apikey, seasonID, season) {
-        return init(access_level, version, apikey, seasonID, season);
+    init: function(access_level, version, year, season, apikey) {
+        return init(access_level, version, year, season, apikey);
     },
 
     setRequest: function(reqObj) {
@@ -112,22 +107,19 @@ module.exports = {
       return getGameScoreAndStats(gameID, callback);
     },
 
-    getStandings: function(callback) {
-        return getStandings(callback);
+    getTournamentList: function(callback) {
+        return getTournamentList(callback);
     },
 
-    getRankings: function(callback) {
-        return getRankings(callback);
+    getTournamentSchedule: function(tournament_id, callback) {
+        return getTournamentSchedule(tournament_id, callback);
     },
 
-    getInjuries: function(callback) {
-        return getInjuries(callback);
-    },
-
-    getRoster: function(teamID, callback) {
-        return getRoster(teamID, callback);
-    },
     getSeasonalStats: function(teamID, callback) {
         return getSeasonalStats(teamID, callback);
+    },
+
+    getLeagueHierarchy: function(callback) {
+        return getLeagueHierarchy(callback);
     }
 };
