@@ -11,7 +11,9 @@ function createUrlWithEndpoint(endpoint) {
         + config.nhl.season
         + '/'
         + endpoint
-        + '.xml?api_key='
+        + '.'
+        + config.format
+        + '?api_key='
         + config.nhl.apikey;
 }
 
@@ -28,7 +30,9 @@ function createUrlWithEndpointWithDate(endpoint, year, month, day) {
         + day
         + '/'
         + endpoint
-        + '.xml?api_key='
+        + '.'
+        + config.format
+        + '?api_key='
         + config.nhl.apikey;
 }
 
@@ -52,7 +56,9 @@ function createBoxScoreUrl(gameID) {
         + config.nhl.version
         + '/games/'
         + gameID
-        + '/boxscore.xml?api_key='
+        + '/boxscore.'
+        + config.format
+        + '?api_key='
         + config.nhl.apikey;
 }
 
@@ -66,7 +72,9 @@ function createStandingsUrl() {
         + config.nhl.seasonID
         + '/'
         + config.nhl.season
-        + '/standings.xml?api_key='
+        + '/standings.'
+        + config.format
+        + '?api_key='
         + config.nhl.apikey;
 }
 

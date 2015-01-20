@@ -51,17 +51,30 @@ function createRequest(url, callback) {
 
         if (!error && response.statusCode == 200) {
 
-            // Parse the XML to JSON
-            parser.parseString(body, function (err, result) {
-                callback(err, result);
-            });
+            parserWrapper(body, callback);
+
         } else {
             callback(error, body);
         }
     });
 }
 
+var parserWrapperJSON = function(body, callback) {
+    callback(null, JSON.parse(body));
+};
+
+var parserWrapperXML = function(body, callback) {
+    // Parse the XML to JSON
+    parser.parseString(body, function (err, result) {
+        callback(err, result);
+    });
+};
+
+var parserWrapper = parserWrapperXML; // Default format is XML for backwards compatability
+
 module.exports = {
+
+    config: config,
 
     init: function(access_level, version, apikey, seasonID, season) {
         return init(access_level, version, apikey, seasonID, season);
@@ -85,5 +98,16 @@ module.exports = {
 
     getStandings: function(callback) {
         return getStandings(callback);
+    },
+
+    setFormat: function(val) {
+        config.format = val.toLowerCase();
+        if (this.isJSON()) {
+            parserWrapper = parserWrapperJSON;
+        }
+    },
+
+    isJSON: function() {
+        return 'JSON' === config.format.toUpperCase();
     }
 };

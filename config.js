@@ -1,5 +1,7 @@
 var config = {}
 
+config.format = 'xml'; // One of: xml (default), json
+
 config.nfl = {};
 config.nfl.access_level = 't';
 config.nfl.version = '1';
