@@ -1,9 +1,9 @@
 /**
-* SPORTSDATA API - NHL Example (2015-01-19)
+* SPORTSDATA API - NHL Season Example (2015-01-19)
 *
 * Usage:
 *        $ export SPORTSDATA_NHL=[APIKEY]
-*        $ node example/nhl.js
+*        $ node example/nhl-season.js
 *
 * References:
 *   http://developer.sportsdatallc.com/io-docs
