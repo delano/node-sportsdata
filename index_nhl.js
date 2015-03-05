@@ -56,6 +56,11 @@ function getHeirarchy(callback) {
     createRequest(url, callback);
 }
 
+function getTeamRoster(teamID, callback) {
+    var url = urlHelper.getTeamRosterUrl(teamID);
+    createRequest(url, callback);
+}
+
 function createRequest(url, callback) {
     request(url, function (error, response, body) {
 
@@ -116,6 +121,10 @@ module.exports = {
 
     getHeirarchy: function(callback) {
         return getHeirarchy(callback);
+    },
+
+    getTeamRoster: function(teamID, callback) {
+        return getTeamRoster(teamID, callback);
     },
 
     setFormat: function(val) {

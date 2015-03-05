@@ -104,6 +104,20 @@ function createHeirarchyUrl() {
         + config.nhl.apikey;
 }
 
+function createTeamRosterUrl(teamID) {
+
+    // URL should look like: http://api.sportsdatallc.org/nhl-t3/teams/:teamID/profile.json?api_key=
+    return 'http://api.sportsdatallc.org/nhl-'
+        + config.nhl.access_level
+        + config.nhl.version
+        + '/teams/'
+        + teamID
+        + '/profile.'
+        + config.format
+        + '?api_key='
+        + config.nhl.apikey;
+}
+
 module.exports = {
 
     getSeasonScheduleUrl: function () {
@@ -128,5 +142,9 @@ module.exports = {
 
     getHeirarchyUrl: function () {
         return createHeirarchyUrl();
+    },
+
+    getTeamRosterUrl: function (teamID) {
+        return createTeamRosterUrl(teamID);
     }
 }
