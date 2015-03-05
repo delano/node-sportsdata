@@ -51,6 +51,11 @@ function getInjuries(callback) {
     createRequest(url, callback);
 }
 
+function getHeirarchy(callback) {
+    var url = urlHelper.getHeirarchyUrl();
+    createRequest(url, callback);
+}
+
 function createRequest(url, callback) {
     request(url, function (error, response, body) {
 
@@ -107,6 +112,10 @@ module.exports = {
 
     getInjuries: function(callback) {
         return getInjuries(callback);
+    },
+
+    getHeirarchy: function(callback) {
+        return getHeirarchy(callback);
     },
 
     setFormat: function(val) {

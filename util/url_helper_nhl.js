@@ -91,6 +91,19 @@ function createInjuriesUrl() {
         + config.nhl.apikey;
 }
 
+function createHeirarchyUrl() {
+
+    // URL should look like: http://api.sportsdatallc.org/nhl-t3/league/hierarchy.json?api_key=
+    return 'http://api.sportsdatallc.org/nhl-'
+        + config.nhl.access_level
+        + config.nhl.version
+        + '/league/'
+        + '/hierarchy.'
+        + config.format
+        + '?api_key='
+        + config.nhl.apikey;
+}
+
 module.exports = {
 
     getSeasonScheduleUrl: function () {
@@ -111,5 +124,9 @@ module.exports = {
 
     getInjuriesUrl: function () {
         return createInjuriesUrl();
+    },
+
+    getHeirarchyUrl: function () {
+        return createHeirarchyUrl();
     }
 }
