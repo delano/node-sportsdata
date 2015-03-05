@@ -78,6 +78,19 @@ function createStandingsUrl() {
         + config.nhl.apikey;
 }
 
+function createInjuriesUrl() {
+
+    // URL should look like: http://api.sportsdatallc.org/nhl-t3/league/injuries.json?api_key=
+    return 'http://api.sportsdatallc.org/nhl-'
+        + config.nhl.access_level
+        + config.nhl.version
+        + '/league/'
+        + '/injuries.'
+        + config.format
+        + '?api_key='
+        + config.nhl.apikey;
+}
+
 module.exports = {
 
     getSeasonScheduleUrl: function () {
@@ -94,5 +107,9 @@ module.exports = {
 
     getStandingsUrl: function () {
         return createStandingsUrl();
+    },
+
+    getInjuriesUrl: function () {
+        return createInjuriesUrl();
     }
 }
