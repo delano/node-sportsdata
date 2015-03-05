@@ -36,6 +36,11 @@ function getDailySchedule(year, month, day, callback) {
     createRequest(url, callback);
 }
 
+function getTransfers(year, month, day, callback) {
+    var url = urlHelper.getTransfersUrl(year, month, day);
+    createRequest(url, callback);
+}
+
 function getBoxScore(gameID, callback) {
     var url = urlHelper.getBoxScoreUrl(gameID);
     createRequest(url, callback);
@@ -110,6 +115,10 @@ module.exports = {
 
     getDailySchedule: function(year, month, day, callback) {
         return getDailySchedule(year, month, day, callback);
+    },
+
+    getTransfers: function(year, month, day, callback) {
+        return getTransfers(year, month, day, callback);
     },
 
     getBoxScore: function(gameID, callback) {

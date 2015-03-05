@@ -17,12 +17,14 @@ function createUrlWithEndpoint(endpoint) {
         + config.nhl.apikey;
 }
 
-function createUrlWithEndpointWithDate(endpoint, year, month, day) {
+function createUrlWithEndpointWithDate(area, endpoint, year, month, day) {
     // URL should look like: http://api.sportsdatallc.org/nhl-[access_level][version]/games/[year]/[month]/[day]/[endpoint].xml?api_key=[your_api_key]
     return 'http://api.sportsdatallc.org/nhl-'
         + config.nhl.access_level
         + config.nhl.version
-        + '/games/'
+        + '/'
+        + area
+        + '/'
         + year
         + '/'
         + month
@@ -45,7 +47,15 @@ function createSeasonScheduleUrl() {
 function createDailyScheduleUrl(year, month, day) {
 
     // URL should look like: http://api.sportsdatallc.org/nhl-[access_level][version]/games/[year]/[month]/[day]/schedule.xml?api_key=[your_api_key]
-    return createUrlWithEndpointWithDate('schedule', year, month, day);
+    return createUrlWithEndpointWithDate('games', 'schedule', year, month, day);
+}
+
+function createTransfersUrl(year, month, day) {
+
+    // URL should look like: http://api.sportsdatallc.org/nhl-[access_level][version]/games/[year]/[month]/[day]/schedule.xml?api_key=[your_api_key]
+    var t= createUrlWithEndpointWithDate('league', 'transfers', year, month, day);
+    console.log(t);
+    return t
 }
 
 function createBoxScoreUrl(gameID) {
@@ -140,6 +150,10 @@ module.exports = {
 
     getDailyScheduleUrl: function (year, month, day) {
         return createDailyScheduleUrl(year, month, day);
+    },
+
+    getTransfersUrl: function (year, month, day) {
+        return createTransfersUrl(year, month, day);
     },
 
     getBoxScoreUrl: function (gameID) {
