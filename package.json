@@ -1,5 +1,5 @@
 {
-  "name": "node-sportsdata",
+  "name": "sportsdata",
   "version": "0.1.22",
   "description": "Node module that wraps the SportsData API with mongoDB-friendly parsing",
   "main": "index.js",
