@@ -115,7 +115,7 @@ function createInjuriesUrl() {
         + config.nhl.apikey;
 }
 
-function createHeirarchyUrl() {
+function createHierarchyUrl() {
 
     // URL should look like: http://api.sportsdatallc.org/nhl-t3/league/hierarchy.json?api_key=
     return 'http://api.sportsdatallc.org/nhl-'
@@ -172,8 +172,8 @@ module.exports = {
         return createInjuriesUrl();
     },
 
-    getHeirarchyUrl: function () {
-        return createHeirarchyUrl();
+    getHierarchyUrl: function () {
+        return createHierarchyUrl();
     },
 
     getTeamRosterUrl: function (teamID) {

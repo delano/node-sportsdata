@@ -61,8 +61,8 @@ function getInjuries(callback) {
     createRequest(url, callback);
 }
 
-function getHeirarchy(callback) {
-    var url = urlHelper.getHeirarchyUrl();
+function getHierarchy(callback) {
+    var url = urlHelper.getHierarchyUrl();
     createRequest(url, callback);
 }
 
@@ -137,8 +137,8 @@ module.exports = {
         return getInjuries(callback);
     },
 
-    getHeirarchy: function(callback) {
-        return getHeirarchy(callback);
+    getHierarchy: function(callback) {
+        return getHierarchy(callback);
     },
 
     getTeamRoster: function(teamID, callback) {
