@@ -1,5 +1,5 @@
 {
-  "name": "sportsdata-mongo",
+  "name": "node-sportsdata",
   "version": "0.1.22",
   "description": "Node module that wraps the SportsData API with mongoDB-friendly parsing",
   "main": "index.js",
@@ -13,7 +13,7 @@
   "keywords": [
     "sportsdata",
     "sports",
-    "api", 
+    "api",
     "mongoDB"
   ],
   "author": "Eric Chen",
