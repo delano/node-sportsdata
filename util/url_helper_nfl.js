@@ -2,8 +2,8 @@ var config = require('../config');
 
 function createWeeklyUrlForEndpoint(week, endpoint) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[endpoint].[format]?api_key=[your_api_key]
-    return 'http://api.sportsdatallc.org/nfl-'
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[endpoint].[format]?api_key=[your_api_key]
+    return 'http://api.sportradar.us/nfl-'
         + config.nfl.access_level
         + config.nfl.version
         + '/'
@@ -22,8 +22,8 @@ function createWeeklyUrlForEndpoint(week, endpoint) {
 
 function createWeeklyUrlForEndpointAndTeams(endpoint, week, awayteam, hometeam) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/[endpoint].[format]?api_key=[your_api_key]
-    return 'http://api.sportsdatallc.org/nfl-'
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/[endpoint].[format]?api_key=[your_api_key]
+    return 'http://api.sportradar.us/nfl-'
         + config.nfl.access_level
         + config.nfl.version
         + '/'
@@ -46,8 +46,8 @@ function createWeeklyUrlForEndpointAndTeams(endpoint, week, awayteam, hometeam) 
 
 function createTeamUrlForEndpoint(team, endpoint) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/teams/[team]/[endpoint].[format]?api_key=[your_api_key]
-    return 'http://api.sportsdatallc.org/nfl-'
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/teams/[team]/[endpoint].[format]?api_key=[your_api_key]
+    return 'http://api.sportradar.us/nfl-'
         + config.nfl.access_level
         + config.nfl.version
         + '/teams/'
@@ -62,14 +62,14 @@ function createTeamUrlForEndpoint(team, endpoint) {
 
 function createWeeklyScheduleUrl(week) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/schedule.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/schedule.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpoint(week, 'schedule');
 }
 
 function createSeasonScheduleUrl() {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/schedule.[format]?api_key=[your_api_key]
-    return 'http://api.sportsdatallc.org/nfl-'
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/schedule.[format]?api_key=[your_api_key]
+    return 'http://api.sportradar.us/nfl-'
         + config.nfl.access_level
         + config.nfl.version
         + '/'
@@ -84,26 +84,26 @@ function createSeasonScheduleUrl() {
 
 function createGameStatsUrl(week, awayteam, hometeam) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/statistics.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/statistics.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpointAndTeams('statistics', week, awayteam, hometeam);
 }
 
 function createGameSummaryUrl(week, awayteam, hometeam) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/summary.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/summary.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpointAndTeams('summary', week, awayteam, hometeam);
 }
 
 function createPlayByPlayUrl(week, awayteam, hometeam) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/pbp.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/pbp.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpointAndTeams('pbp', week, awayteam, hometeam);
 }
 
 function createPlaySummaryUrl(week, awayteam, hometeam, playid) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/plays/[play_id].[format]?api_key=[your_api_key]
-    return 'http://api.sportsdatallc.org/nfl-'
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/plays/[play_id].[format]?api_key=[your_api_key]
+    return 'http://api.sportradar.us/nfl-'
         + config.nfl.access_level
         + config.nfl.version
         + '/'
@@ -126,33 +126,33 @@ function createPlaySummaryUrl(week, awayteam, hometeam, playid) {
 
 function createGameBoxscoreUrl(week, awayteam, hometeam) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/boxscore.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/boxscore.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpointAndTeams('boxscore', week, awayteam, hometeam);
 }
 
 function createExtendedBoxscoreUrl(week, awayteam, hometeam) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/extended-boxscore.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/extended-boxscore.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpointAndTeams('extended-boxscore', week, awayteam, hometeam);
 }
 
 
 function createWeeklyBoxscoreUrl(week) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/boxscore.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/boxscore.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpoint(week, 'boxscore');
 }
 
 function createGameRosterUrl(week, awayteam, hometeam) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/roster.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/roster.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpointAndTeams('roster', week, awayteam, hometeam);
 }
 
 function createTeamHierarchyUrl() {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/teams/hierarchy.[format]?api_key=[your_api_key]
-    return 'http://api.sportsdatallc.org/nfl-'
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/teams/hierarchy.[format]?api_key=[your_api_key]
+    return 'http://api.sportradar.us/nfl-'
         + config.nfl.access_level
         + config.nfl.version
         + '/teams/hierarchy.'
@@ -163,38 +163,38 @@ function createTeamHierarchyUrl() {
 
 function createTeamRosterUrl(team) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/teams/[team]/roster.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/teams/[team]/roster.[format]?api_key=[your_api_key]
     return createTeamUrlForEndpoint(team, 'roster');
 }
 
 function createInjuriesUrl(week, awayteam, hometeam) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/injuries.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/injuries.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpointAndTeams('injuries', week, awayteam, hometeam);
 }
 
 function createGameDepthChartUrl(week, awayteam, hometeam) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/depthchart.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/[away_team]/[home_team]/depthchart.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpointAndTeams('depthchart', week, awayteam, hometeam);
 }
 
 function createTeamDepthChartUrl(team) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/teams/[team]/depthchart.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/teams/[team]/depthchart.[format]?api_key=[your_api_key]
     return createTeamUrlForEndpoint(team, 'depthchart');
 }
 
 function createWeeklyLeagueLeadersUrl(week) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/leaders.[format]?api_key=[your_api_key]
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/[year]/[nfl_season]/[nfl_season_week]/leaders.[format]?api_key=[your_api_key]
     return createWeeklyUrlForEndpoint(week, 'leaders');
 }
 
 function createStandingsUrl() {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/teams/[year]/[nfl_season]/standings.[format]?api_key=[your_api_key]
-    return 'http://api.sportsdatallc.org/nfl-'
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/teams/[year]/[nfl_season]/standings.[format]?api_key=[your_api_key]
+    return 'http://api.sportradar.us/nfl-'
         + config.nfl.access_level
         + config.nfl.version
         + '/teams/'
@@ -209,8 +209,8 @@ function createStandingsUrl() {
 
 function createSeasonalStatsUrl(team) {
 
-    // URL should look like: http://api.sportsdatallc.org/nfl-[access_level][version]/teams/[team]/[year]/[nfl_season]/statistics.[format]?api_key=[your_api_key]
-    return 'http://api.sportsdatallc.org/nfl-'
+    // URL should look like: http://api.sportradar.us/nfl-[access_level][version]/teams/[team]/[year]/[nfl_season]/statistics.[format]?api_key=[your_api_key]
+    return 'http://api.sportradar.us/nfl-'
         + config.nfl.access_level
         + config.nfl.version
         + '/teams/'
