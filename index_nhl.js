@@ -73,7 +73,6 @@ function getTeamRoster(teamID, callback) {
 
 function getSeasonalStats(teamID, callback) {
     var url = urlHelper.getSeasonalStatsUrl(teamID);
-    console.log(url)
     createRequest(url, callback);
 }
 
