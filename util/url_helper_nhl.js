@@ -142,6 +142,24 @@ function createTeamRosterUrl(teamID) {
         + config.nhl.apikey;
 }
 
+function createSeasonalStatsUrl(teamID) {
+
+    // URL should look like: http://api.sportradar.us/nhl-[access_level][version]/seasontd/[season]/[nhl_season]/statistics.xml?api_key=[your_api_key]
+    return 'http://api.sportradar.us/nhl-'
+        + config.nhl.access_level
+        + config.nhl.version
+        + '/seasontd/'
+        + config.nhl.seasonID
+        + '/'
+        + config.nhl.season
+        + '/teams/'
+        + teamID
+        + '/statistics.'
+        + config.format
+        + '?api_key='
+        + config.nhl.apikey;
+}
+
 module.exports = {
 
     getSeasonScheduleUrl: function () {
@@ -178,5 +196,9 @@ module.exports = {
 
     getTeamRosterUrl: function (teamID) {
         return createTeamRosterUrl(teamID);
+    },
+
+    getSeasonalStatsUrl: function (teamID) {
+        return createSeasonalStatsUrl(teamID);
     }
 }
